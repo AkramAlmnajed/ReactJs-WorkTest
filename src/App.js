@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Header from "./mainComponents/header";
+import FireBeeHandBand from "./mainComponents/fireBeeHeadBand";
+import MoneyBack from "./mainComponents/moneyBack";
+import FireBeeSignals from "./mainComponents/fireeBeeSignals";
+import FireBeeInfo from "./mainComponents/fireBeeInfo";
+import InsideBox from "./mainComponents/insideBox";
+import AskedQuestions from "./mainComponents/askedQuestions";
+import Footer from "./mainComponents/footer";
+
+const theme = createTheme({
+  spacing: 8,
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Header />
+      <FireBeeHandBand />
+      <MoneyBack />
+      <FireBeeSignals />
+      <FireBeeInfo />
+      <InsideBox />
+      <AskedQuestions />
+      <Footer />
+    </ThemeProvider>
   );
 }
 
